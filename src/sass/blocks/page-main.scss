@@ -1,0 +1,14 @@
+.page-main {
+  width: 100%;
+  padding-top: 65px;
+
+  @include for-tablet {
+    padding-top: 75px;
+  }
+}
+
+.page-main__education,
+.page-main__skills,
+.page-main__projects {
+  margin-top: 20px;
+}

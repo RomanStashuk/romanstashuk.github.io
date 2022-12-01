@@ -1,0 +1,176 @@
+// Close / open main navigation button (for mobile only)
+.main-nav__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include for-tablet {
+    display: none;
+  }
+}
+
+.main-nav--nojs .main-nav__toggle {
+  display: none;
+}
+
+.main-nav--closed .main-nav__toggle {
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    width: 24px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $white;
+    box-shadow:
+      0 8px 0 0 $white,
+      0 16px 0 0 $white;
+  }
+}
+
+.main-nav--opened .main-nav__toggle {
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    right: 13px;
+    display: block;
+    width: 26px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $white;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+// Main navigation
+.main-nav--closed:not(.main-nav--nojs) .main-nav__list {
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.main-nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px 0;
+  list-style: none;
+
+  @include for-tablet {
+    flex-direction: row;
+    padding: 0;
+  }
+}
+
+.main-nav__item {
+
+  @include for-tablet {
+    margin: 0 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.main-nav__link {
+  position: relative;
+  display: block;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1;
+  color: $white;
+  text-decoration: none;
+  opacity: 0.6;
+  transition-duration: 0.2s;
+
+  @include for-tablet {
+    padding: 10px 0;
+    color: $gray;
+  }
+
+  &--active {
+    opacity: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 8px;
+      left: calc(50% - 13px);
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $white;
+
+      @include for-tablet {
+        bottom: 3px;
+        background-color: $main-color;
+      }
+    }
+  }
+
+  @include not-touch {
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 8px;
+      left: calc(50% - 13px);
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $white;
+      transition: all 280ms ease-in-out;
+
+      @include for-tablet {
+        bottom: 3px;
+        background-color: $main-color;
+      }
+    }
+
+    &:hover::before {
+      background-color: $white;
+      transition: width 350ms ease-in-out;
+      width: 26px;
+
+      @include for-tablet {
+        bottom: 3px;
+        background-color: $main-color;
+      }
+    }
+
+    &:active {
+      opacity: 0.8;
+
+      &::after {
+        opacity: 0.8;
+      }
+    }
+  }
+}

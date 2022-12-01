@@ -1,0 +1,12 @@
+@import 'base/fonts.scss';     // Fonts
+
+@import 'base/variables.scss'; // Sass variables
+@import 'base/mixins.scss';    // Sass mixins
+
+@import 'base/normalize.scss'; // Normalize.css
+
+@import 'base/global.scss';
+
+@import 'base/print.scss';     // Styles for pdf version
+
+@import 'blocks/*.scss';

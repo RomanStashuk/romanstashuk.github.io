@@ -1,0 +1,21 @@
+.page-footer__copyright {
+  margin: 18px 0;
+  color: $gray;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    @include not-touch {
+
+      &:hover,
+      &:focus {
+        color: $main-color;
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+}

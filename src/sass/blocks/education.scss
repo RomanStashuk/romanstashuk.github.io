@@ -1,0 +1,48 @@
+.education__wrap {
+  padding: 30px 30px 50px;
+  color: $gray;
+
+  @include for-tablet {
+    padding: 40px 50px 50px;
+  }
+}
+
+.education__info {
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: $gray--dark;
+}
+
+.education__list {
+  margin: 0;
+}
+
+.education__list-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 12px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.education__key {
+  width: 100%;
+  margin-bottom: 4px;
+  color: $main-color;
+
+  @include for-tablet {
+    width: auto;
+    min-width: 200px;
+    margin-bottom: 0;
+  }
+
+
+}
+
+.education__value {
+  margin: 0;
+}

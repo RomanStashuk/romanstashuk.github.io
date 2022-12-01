@@ -1,0 +1,32 @@
+.section {
+  border-radius: 15px;
+  background-color: $white;
+  box-shadow: 0 0 10px 2px rgba(221, 221, 221, 1);
+}
+
+.section__title {
+  margin: 0;
+  padding: 15px 30px;
+  border-radius: 15px 15px 0 0;
+  font-size: 33px;
+  color: $white;
+  text-align: center;
+  background: url('../img/section_bg.png') center / cover no-repeat $main-color;
+
+  @include for-tablet {
+    padding: 30px 50px;
+    font-size: 42px;
+  }
+}
+
+.section__subtitle {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 21px;
+
+  color: $gray--dark;
+
+  span {
+    color: $main-color;
+  }
+}
