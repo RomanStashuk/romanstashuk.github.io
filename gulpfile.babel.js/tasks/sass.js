@@ -26,7 +26,7 @@ export default () => {
     .pipe(gp.sassGlob())
     .pipe(sassPlugin())
     .pipe(gp.autoprefixer())
-    .pipe(gp.groupCssMediaQueries())
+    // .pipe(gp.groupCssMediaQueries())
     .pipe(gulp.dest(path.sass.dest))
     .pipe(gp.rename({ suffix: '.min' }))
     .pipe(gp.size({ title: 'CSS before' }))
