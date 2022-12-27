@@ -12,13 +12,13 @@ class Navigation extends Component {
   }
 }
 
-function buttonClickHandler(evt) {
-  if (this.$el.classList.contains('main-nav--closed')) {
-    this.$el.classList.remove('main-nav--closed');
-    this.$el.classList.add('main-nav--opened');
+function buttonClickHandler() {
+  if (this.hasClass('main-nav--closed')) {
+    this.removeClass('main-nav--closed');
+    this.addClass('main-nav--opened');
   } else {
-    this.$el.classList.add('main-nav--closed');
-    this.$el.classList.remove('main-nav--opened');
+    this.addClass('main-nav--closed');
+    this.removeClass('main-nav--opened');
   }
 }
 

@@ -23,6 +23,10 @@ class Component {
   removeClass(htmlClass) {
     this.$el.classList.remove(htmlClass);
   }
+
+  hasClass(htmlClass) {
+    return this.$el.classList.contains(htmlClass);
+  }
 }
 
 export default Component;
