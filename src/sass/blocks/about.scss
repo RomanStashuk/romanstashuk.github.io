@@ -115,6 +115,18 @@
   }
 
   @include not-touch {
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -100%;
+      bottom: 100%;
+      z-index: -1;
+      display: block;
+      background-color: $white;
+      transition: all 0.35s;
+    }
 
     &:hover,
     &:focus {
@@ -128,19 +140,6 @@
         bottom: 0;
         transition: all 0.35s;
       }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: -100%;
-      bottom: 100%;
-      z-index: -1;
-      display: block;
-      background-color: $white;
-      transition: all 0.35s;
     }
   }
 }
@@ -191,7 +190,6 @@
     text-decoration: none;
 
     @include not-touch {
-
       &:hover,
       &:focus {
         color: $main-color;
