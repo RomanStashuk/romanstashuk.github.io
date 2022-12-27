@@ -6,6 +6,4 @@ import path from '../config/paths.js';
 import del from 'del';
 
 // Видалення каталогу
-export default () => {
-  return del(path.root);
-};
+export default () => del(path.root);

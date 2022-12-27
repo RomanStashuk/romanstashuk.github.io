@@ -13,16 +13,19 @@ import dartSass from 'sass';
 const gp = loadPlugins();
 const sassPlugin = gp.sass(dartSass);
 
-// Обрdбка SASS/SCSS
-export default () => {
-  return gulp.src(path.sass.src)
+// Обрoбка SASS/SCSS
+export default () =>
+  gulp
+    .src(path.sass.src)
     .pipe(gp.if(app.isDev, gp.sourcemaps.init()))
-    .pipe(gp.plumber({
-      errorHandler: gp.notify.onError(error => ({
-        title: 'SASS',
-        message: error.message
-      }))
-    }))
+    .pipe(
+      gp.plumber({
+        errorHandler: gp.notify.onError((error) => ({
+          title: 'SASS',
+          message: error.message,
+        })),
+      })
+    )
     .pipe(gp.sassGlob())
     .pipe(sassPlugin())
     .pipe(gp.autoprefixer())
@@ -35,4 +38,3 @@ export default () => {
     .pipe(gp.if(app.isDev, gp.sourcemaps.write('.')))
     .pipe(gulp.dest(path.sass.dest))
     .pipe(browserSync.stream());
-};

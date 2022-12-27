@@ -11,15 +11,17 @@ import browserSync from 'browser-sync';
 const gp = loadPlugins();
 
 // Копіювання файлів і каталогів
-export default () => {
-  return gulp.src(path.copy.src)
-    .pipe(gp.plumber({
-      errorHandler: gp.notify.onError(error => ({
-        title: 'Copy',
-        message: error.message
-      }))
-    }))
+export default () =>
+  gulp
+    .src(path.copy.src)
+    .pipe(
+      gp.plumber({
+        errorHandler: gp.notify.onError((error) => ({
+          title: 'Copy',
+          message: error.message,
+        })),
+      })
+    )
     .pipe(gp.newer(path.copy.dest))
     .pipe(gulp.dest(path.copy.dest))
     .pipe(browserSync.stream());
-};

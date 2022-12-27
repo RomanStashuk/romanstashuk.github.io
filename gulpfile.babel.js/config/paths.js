@@ -1,7 +1,7 @@
 'use strict';
 
 const pathSrc = './src';
-const pathDest = './build';
+const pathDest = './docs';
 
 export default {
   root: pathDest,
