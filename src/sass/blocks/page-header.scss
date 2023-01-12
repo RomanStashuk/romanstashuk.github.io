@@ -9,7 +9,6 @@
   background-color: $main-color;
 
   .container {
-
     @include for-tablet {
       display: flex;
       align-items: center;
@@ -18,9 +17,10 @@
   }
 
   @include for-tablet {
-    min-width: 60px;
+    min-height: 60px;
     color: $gray;
     background-color: $white;
+    box-shadow: $shadow--light;
   }
 }
 

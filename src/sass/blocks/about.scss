@@ -21,7 +21,7 @@
     width: 280px;
     height: 280px;
     margin-bottom: -74px;
-    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: $shadow--sm;
   }
 }
 
@@ -131,7 +131,7 @@
     &:hover,
     &:focus {
       color: $gray--dark;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      box-shadow: $shadow--md;
 
       &::after {
         left: 0;
@@ -187,7 +187,7 @@
 
   a {
     color: inherit;
-    text-decoration: none;
+    // text-decoration: none;
 
     @include not-touch {
       &:hover,
