@@ -1,0 +1,45 @@
+@media print {
+  .page-header {
+    display: none;
+  }
+
+  .page-body {
+    background: $white;
+  }
+
+  .page-main {
+    padding: 0;
+  }
+
+  .section {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .section__title {
+    padding: 10px 20px;
+    font-size: 26px;
+    border-radius: 0;
+  }
+
+  .about {
+    display: flex;
+  }
+
+  .about__header {
+    padding-top: 20;
+    border-radius: 0;
+  }
+
+  .about__link {
+    display: none;
+  }
+
+  .about__wrap {
+    display: grid;
+  }
+
+  .page-footer {
+    display: none;
+  }
+}
